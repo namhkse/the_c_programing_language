@@ -16,4 +16,8 @@ int main(int argc, char const *argv[])
     squeeze2(s, 't');
     printf("%s\n", s);
     return 0;
-}
+et to the full path of the compiler you are using to build your project.
+
+For example:et to the full path of the compiler you are using to build your project.
+
+For example:}
