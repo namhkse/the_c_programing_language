@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void strcat2(char[], char[]);
+void strcat2(char *, char *);
+void strcat3(char[], char[]);
 
 int main(int argc, char const *argv[])
 {
@@ -14,12 +15,26 @@ int main(int argc, char const *argv[])
 }
 
 /* strcat: concatenate t to end of s; s must be big enough */
-void strcat2(char s[], char t[])
+void strcat3(char s[], char t[])
 {
     int i = 0;
     int j = 0;
-    while(s[i] != '\0')     /* find end of s */
+    while (s[i] != '\0') /* find end of s */
         i++;
-    while((s[i++] = t[j++]) != '\0');       /* copy t */
+    while ((s[i++] = t[j++]) != '\0')
+        ; /* copy t */
 }
 
+/* strcat: version pointer */
+void strcat2(char *s, char *t)
+{
+    while (*s)
+        s++;
+
+    while (*t)
+    {
+        *s = *t;
+        t++;
+        s++;
+    }
+}
